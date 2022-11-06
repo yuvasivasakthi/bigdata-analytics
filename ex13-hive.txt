@@ -1,0 +1,45 @@
+To create database
+create database demo;
+
+TO CREATE TABLE
+
+create table demo.emp(id int,Namr string ,salary folat);
+
+TO DESCRIBE ABOUT TABLE
+
+describe demo.emp;
+
+TO CREATE NEW DIRECTORY
+
+hdfs dfs-mkdir/HiveDirectory
+
+TO CREATE DIRCTORY FOR FILE
+
+hdfs dfs-put hive/emplist/HiveDirectory
+
+TO CREATEEXTERNAL TABLE
+
+create external table elist(id int,Name string,salary float)
+rowformat delimited
+fields terminated by','
+loaction'/HiveDirectory';
+
+TO PRINT EXTERNAL TABLE
+
+select * from elist;
+
+TO ALTER TABLE
+
+alter table elist rename to emp_data;
+
+TO CREATE VIEWS
+
+create view emp_300000 AS
+select * from emp_data
+where salary>300000.0;
+select * from emp_30000;
+
+FUNCTIONS
+
+select id,Name,sqrt(salary)from emplist;
+select id,Name,round(salary)from emplist;
